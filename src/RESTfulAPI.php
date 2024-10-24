@@ -560,7 +560,7 @@ class RESTfulAPI extends Controller
                 $member = null;
             }
 
-            $access = $apiInstance->authority->checkPermission($model, $member, $httpMethod);
+            $access = $apiInstance->authority->checkPermission($model, $httpMethod, $member);
             if (!is_bool($access)) {
                 $access = true;
             }
