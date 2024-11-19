@@ -3,7 +3,7 @@
 namespace Colymba\RESTfulAPI\Extensions;
 
 use SilverStripe\Forms\FieldList;
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\core\Extension;
 
 /**
  * RESTfulAPI Token authentication data extension
@@ -18,7 +18,7 @@ use SilverStripe\ORM\DataExtension;
  * @package RESTfulAPI
  * @subpackage Authentication
  */
-class TokenAuthExtension extends DataExtension
+class TokenAuthExtension extends Extension
 {
 
     private static $db = array(

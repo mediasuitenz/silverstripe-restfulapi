@@ -77,16 +77,16 @@ class RESTfulAPITester extends SapphireTest
 
     public function setDefaultApiConfig()
     {
-        Config::inst()->update(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_CONFIG_ONLY');
+        Config::inst()->set(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_CONFIG_ONLY');
 
-        Config::inst()->update(RESTfulAPI::class, 'dependencies', array(
+        Config::inst()->set(RESTfulAPI::class, 'dependencies', array(
             'authenticator' => '%$Colymba\RESTfulAPI\Authenticators\TokenAuthenticator',
             'authority' => '%$Colymba\RESTfulAPI\PermissionManagers\DefaultPermissionManager',
             'queryHandler' => '%$Colymba\RESTfulAPI\QueryHandlers\DefaultQueryHandler',
             'serializer' => '%$Colymba\RESTfulAPI\Serializers\DefaultSerializer',
         ));
 
-        Config::inst()->update(RESTfulAPI::class, 'cors', array(
+        Config::inst()->set(RESTfulAPI::class, 'cors', array(
             'Enabled' => true,
             'Allow-Origin' => '*',
             'Allow-Headers' => '*',
@@ -94,11 +94,11 @@ class RESTfulAPITester extends SapphireTest
             'Max-Age' => 86400,
         ));
 
-        Config::inst()->update(DefaultQueryHandler::class, 'dependencies', array(
+        Config::inst()->set(DefaultQueryHandler::class, 'dependencies', array(
             'deSerializer' => '%$Colymba\RESTfulAPI\Serializers\DefaultDeSerializer'
         ));
 
-        Config::inst()->update(DefaultQueryHandler::class, 'models', array(
+        Config::inst()->set(DefaultQueryHandler::class, 'models', array(
                 'apitestauthor'  => 'Colymba\RESTfulAPI\Tests\Fixtures\ApiTestAuthor',
                 'apitestlibrary' => 'Colymba\RESTfulAPI\Tests\Fixtures\ApiTestLibrary',
             )
@@ -150,7 +150,7 @@ class RESTfulAPITester extends SapphireTest
         );
     }
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         parent::setUpBeforeClass();
 
@@ -159,12 +159,12 @@ class RESTfulAPITester extends SapphireTest
         }
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->setDefaultApiConfig();
 
-        Config::inst()->update(Director::class, 'alternate_base_url', 'http://mysite.com/');
+        Config::inst()->set(Director::class, 'alternate_base_url', 'http://mysite.com/');
     }
 }

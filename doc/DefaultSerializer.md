@@ -55,7 +55,7 @@ class BookAuthorApiExtension extends DataExtension
      */
     public function onBeforeSerialize()
     {
-        Config::inst()->update(Author::class, 'api_fields', array('Name'));
+        Config::inst()->set(Author::class, 'api_fields', array('Name'));
     }
 }
 ```

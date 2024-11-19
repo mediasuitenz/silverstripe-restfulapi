@@ -2,7 +2,7 @@
 
 namespace Colymba\RESTfulAPI\Extensions;
 
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\PermissionProvider;
@@ -22,7 +22,7 @@ use SilverStripe\Security\Group;
  * @package RESTfulAPI
  * @subpackage Permission
  */
-class GroupExtension extends DataExtension implements PermissionProvider
+class GroupExtension extends Extension implements PermissionProvider
 {
     /**
      * Basic RESTfulAPI Permission set

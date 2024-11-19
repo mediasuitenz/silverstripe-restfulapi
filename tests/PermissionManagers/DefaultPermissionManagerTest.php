@@ -78,8 +78,8 @@ class DefaultPermissionManagerTest extends RESTfulAPITester
      */
     public function testReadPermissions()
     {
-        Config::inst()->update(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_MODEL_ONLY');
-        Config::inst()->update(RESTfulAPI::class, 'cors', array(
+        Config::inst()->set(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_MODEL_ONLY');
+        Config::inst()->set(RESTfulAPI::class, 'cors', array(
             'Enabled' => false,
         ));
 
@@ -111,8 +111,8 @@ class DefaultPermissionManagerTest extends RESTfulAPITester
      */
     public function testEditPermissions()
     {
-        Config::inst()->update(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_MODEL_ONLY');
-        Config::inst()->update(RESTfulAPI::class, 'cors', array(
+        Config::inst()->set(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_MODEL_ONLY');
+        Config::inst()->set(RESTfulAPI::class, 'cors', array(
             'Enabled' => false,
         ));
 
@@ -144,8 +144,8 @@ class DefaultPermissionManagerTest extends RESTfulAPITester
      */
     public function testCreatePermissions()
     {
-        Config::inst()->update(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_MODEL_ONLY');
-        Config::inst()->update(RESTfulAPI::class, 'cors', array(
+        Config::inst()->set(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_MODEL_ONLY');
+        Config::inst()->set(RESTfulAPI::class, 'cors', array(
             'Enabled' => false,
         ));
 
@@ -177,8 +177,8 @@ class DefaultPermissionManagerTest extends RESTfulAPITester
      */
     public function testDeletePermissions()
     {
-        Config::inst()->update(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_MODEL_ONLY');
-        Config::inst()->update(RESTfulAPI::class, 'cors', array(
+        Config::inst()->set(RESTfulAPI::class, 'access_control_policy', 'ACL_CHECK_MODEL_ONLY');
+        Config::inst()->set(RESTfulAPI::class, 'cors', array(
             'Enabled' => false,
         ));
 
